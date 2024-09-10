@@ -28,8 +28,8 @@ linktree="https://linktr.ee/henvxofficial"
 architecture=$(getprop ro.product.cpu.abi)
 android_version=$(getprop ro.build.version.release)
 if [[ $android_version == 14* ]]; then
-	url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
-t2LmsNWgsz9zrN4mr2clQp5qrR=="
+	url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ygsYEKQN5qrJ9frNoqt2Mlt2bmsNWg
+sz9irN5eCeEf"
 elif [[ $android_version == 13* ]]; then
 	url="r17rYI0tYD6Cp9pPOtlQ2c0rYMzuOEctdEmseIcseHlP29kC0ycsbA6DKSJQNWjC3ElvUVotdMqtX9l
 t2LmsNWgsz9zrN4mr2clQp5qrR=="
