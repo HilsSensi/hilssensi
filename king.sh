@@ -30,7 +30,7 @@ RemoveListerOne() {
     wm density reset
 }
 sensivityOne() {
-    wm size 1620x3690
+    wm size 1296x2796
     wm density reset
     sleep 0.1
     device_config put game_overlay com.dts.freefireth fps=120
