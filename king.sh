@@ -32,6 +32,10 @@ RemoveListerOne() {
 sensivityOne() {
     wm density reset
     sleep 0.1
+settings put system pointer_speed 7
+settings put system touchpanel_edge_filter 0
+echo 0 > /sys/devices/virtual/input/input1/wake_gesture
+echo 1 > /sys/class/kgsl/kgsl-3d0/bus_split
     device_config put game_overlay com.dts.freefireth fps=120
     device_config put game_overlay com.dts.freefiremax fps=120
 }
