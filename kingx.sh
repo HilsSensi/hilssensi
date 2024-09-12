@@ -124,8 +124,9 @@ fi
 	sleep 1
 	echo ""
 	echo "
-█▀ █▀▀ █▄░█ █▀ █ ▀▄▀   █▄▀ █ █▄░█ █▀▀ ▀▄▀
-▄█ ██▄ █░▀█ ▄█ █ █░█   █░█ █ █░▀█ █▄█ █░█
+
+█▀ █▀▀ █▄░█ █▀ █ █▄█   █░█ █ █▀▀ █░█
+▄█ ██▄ █░▀█ ▄█ █ ░█░   █▀█ █ 
 "
 	echo ""
 	sleep 0.8 && echo
@@ -133,7 +134,7 @@ fi
 	sleep 0.5
 	printer "- DPIset : $dpi"
 	sleep 0.5
-	printer "- Developer : @Henpeex"
+	printer "- Developer : @Xhils"
 	sleep 0.1
 	echo
 	echo
@@ -148,7 +149,7 @@ fi
 	if [ "$status" ]; then
 		echo "${ORANGE}Programs berhasil terpasang :${END} $architecture"
 		rm $responsebin
-		am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : henpeex 
+		am broadcast -a axeron.show.TOAST --es title "$t_toast" --es msg "Developer : Xhils
 $v_toast " --ei duration "4000" >/dev/null 2>&1
 	else
 		printer "Program failed : $architecture"
