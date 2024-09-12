@@ -55,7 +55,7 @@ local check_vip=$(echo "$check_id" | grep -q "$AXERONID" && echo true || echo fa
 if [ $check_vip = true ]; then
 
 if [ $# -eq 0 ]; then
-    echo "Penggunaan: ax sensihnx -d <DPI> [opsi]"
+    echo "Penggunaan: ax sensyxh -d <DPI> [opsi]"
     return 0
 fi
 
@@ -126,7 +126,7 @@ fi
 	echo "
 
 █▀ █▀▀ █▄░█ █▀ █ █▄█   █░█ █ █▀▀ █░█
-▄█ ██▄ █░▀█ ▄█ █ ░█░   █▀█ █ 
+▄█ ██▄ █░▀█ ▄█ █ ░█░   █▀█ █ █▄█ █▀█
 "
 	echo ""
 	sleep 0.8 && echo
