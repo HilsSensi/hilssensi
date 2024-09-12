@@ -30,7 +30,6 @@ RemoveListerOne() {
     wm density reset
 }
 sensivityOne() {
-    wm size 1296x2796
     wm density reset
     sleep 0.1
     device_config put game_overlay com.dts.freefireth fps=120
@@ -43,7 +42,7 @@ exec 2>/dev/null
 prev_window_state=""
 game_running=""
 
-cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Version: KingX | Author: Henpeex\""
+cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Version: HighY | Author: Xhils\""
 eval "$cmd"
 
 while true; do
