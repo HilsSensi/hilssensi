@@ -32,6 +32,23 @@ RemoveListerOne() {
 sensivityOne() {
     wm density reset
     sleep 0.1
+settings put system enabled_hardware_optimization 1
+settings put system enabled_ui_optimization 1
+settings put system status_bar_animations_duration_scale 0.5
+settings put system navigation_bar_animations_duration_scale 0.5
+settings put system power_menu_expanded_ 130
+settings put system touch_deley 0.1  # Mengurangi penundaan respons sentuhan
+settings put system tap_timeout 100  # Mempercepat respons tap (ketukan)
+settings put system long_press_timeout 300  # Mengurangi waktu untuk sentuhan lama
+settings put system gpu_render_policy 1
+settings put system bg_apps_limit 4
+settings put system hardware_rendering_enabled 1
+settings put system notification_slide_animations_duration 0.30
+settings put system app_close_animated 0.15
+settings put global window_animation_scale 0.5  # Mengurangi skala animasi untuk meningkatkan respons
+settings put global transition_animation_scale 0.5
+settings put global animator_duration_scale 0.5
+
 settings put system pointer_speed 7
 settings put system touchpanel_edge_filter 0
 echo 0 > /sys/devices/virtual/input/input1/wake_gesture
