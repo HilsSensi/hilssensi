@@ -46,7 +46,7 @@ settings delete put global window_animation_scale 0.5
 settings delete put global transition_animation_scale 0.5
 settings delete put global animator_duration_scale 0.5
 
-settings delete put system pointer_speed 10
+settings put system pointer_speed 1
 settings delete put system touchpanel_edge_filter 0
 }
 sensivityOne() {
@@ -70,7 +70,7 @@ settings put global window_animation_scale 0.5
 settings put global transition_animation_scale 0.5
 settings put global animator_duration_scale 0.5
 
-settings put system pointer_speed 10
+settings put system pointer_speed 7
 settings put system touchpanel_edge_filter 0
 echo 0 > /sys/devices/virtual/input/input1/wake_gesture
 echo 1 > /sys/class/kgsl/kgsl-3d0/bus_split
