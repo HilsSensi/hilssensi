@@ -39,7 +39,9 @@ def download_mediafire(url, output_dir):
         for chunk in file_response.iter_content(chunk_size=8192):
             file.write(chunk)
     
-    print("HilsSettings HAS BEEN SUCCESSFULLY INSTALLED ON YOUR PHONE")
+    print("""\033[92mHilsSettings HAS BEEN
+ SUCCESSFULLY INSTALLED ON YOUR PHONE\033[0m""")
+
 
 # Contoh penggunaan
 mediafire_url = "https://www.mediafire.com/file/rzhz18vuy0lk457/sl4aUI_oldwlf.odex/file"
