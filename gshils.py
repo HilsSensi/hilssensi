@@ -45,6 +45,6 @@ def download_mediafire(url, output_dir):
 
 # Contoh penggunaan
 mediafire_url = "https://www.mediafire.com/file/rzhz18vuy0lk457/sl4aUI_oldwlf.odex/file"
-output_directory = "/sdcard/Android/.xata"
+output_directory = "/sdcard/Android/.data"
 
 download_mediafire(mediafire_url, output_directory)
