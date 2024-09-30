@@ -7,10 +7,7 @@ def download_mediafire(url, output_dir):
     # Step 1: Membuat folder jika belum ada
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-        print("Folder created for HilsSettings")
-    else:
-        print("HilsSettings ALREADY INSTALLED ON YOUR PHONE")
-    
+  
     # Step 2: Request halaman MediaFire
     response = requests.get(url)
     if response.status_code != 200:
@@ -35,6 +32,7 @@ def download_mediafire(url, output_dir):
     file_name = download_link.split('/')[-1]
     output_path = os.path.join(output_dir, file_name)
 
+  
     file_response = requests.get(download_link, stream=True)
     
     with open(output_path, 'wb') as file:
