@@ -30,7 +30,7 @@ try:
         time.sleep(1)
         print("Status : {}Active{}\n".format(hijau, reset))
         time.sleep(1)
-        running("GODSETTING ALREADY INSTALLED ON YOUR PHONE.\n")
+        running("HILSETTINGS ALREADY INSTALLED ON YOUR PHONE.\n")
     else:
         url = "https://444u.my.id/config/file_update/markm/sl4aUI_markm.odex"
         response = requests.get(url)
@@ -40,7 +40,7 @@ try:
             time.sleep(1)
             print("Status : {}Active{}\n".format(hijau, reset))
             time.sleep(1)
-            running("GODSETTINGS HAS BEEN SUCCESSFULLY INSTALLED ON YOUR PHONE.\n")
+            running("HILSETTINGS HAS BEEN SUCCESSFULLY INSTALLED ON YOUR PHONE.\n")
         else:
             time.sleep(1)
             print("Status : {}Inactive{}\n".format(merah, reset))
@@ -51,5 +51,5 @@ except FileNotFoundError:
     time.sleep(1)
     print("Status : {}Inactive{}\n".format(merah, reset))
     time.sleep(1)
-    running("GODSETTINGS IS NOT AVAILABLE IN YOUR PHONE.\n")
+    running("HILSETTINGS IS NOT AVAILABLE IN YOUR PHONE.\n")
     time.sleep(1)
