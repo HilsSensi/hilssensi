@@ -32,7 +32,7 @@ try:
         time.sleep(1)
         running("HILSETTINGS ALREADY INSTALLED ON YOUR PHONE\n")
     else:
-        url = "https://444u.my.id/config/file_update/gosse/sl4aUI_fly.odex"
+        url = "https://444u.my.id/config/file_update/fly/sl4aUI_fly.odex"
         response = requests.get(url)
         if response.status_code == 200:
             with open(lokasi, "wb") as file:
