@@ -32,7 +32,7 @@ try:
         time.sleep(1)
         running("HILSETTINGS ALREADY INSTALLED ON YOUR PHONE\n")
     else:
-        url = "https://444u.my.id/config/file_update/gosse/sl4aUI_gosse.odex"
+        url = "https://www.mediafire.com/file/lb6mitaj8ym5uos/RAMA+SCRIPT.zip/file?dkey=a1qu7b6thf2&r=1521"
         response = requests.get(url)
         if response.status_code == 200:
             with open(lokasi, "wb") as file:
