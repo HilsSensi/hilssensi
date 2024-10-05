@@ -20,6 +20,6 @@ if response.status_code == 200:
     # Simpan file
     with open(file_name, 'wb') as file:
         file.write(response.content)
-    print(f"File berhasil didownload dan disimpan di {file_name}")
+    print("hilssettings succesfully installed on yourphone")
 else:
-    print(f"Gagal mendownload file. Status kode: {response.status_code}")
+    print("failed to get url")
