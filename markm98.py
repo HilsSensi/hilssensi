@@ -6,8 +6,8 @@ merah = "\033[1;31m"
 
 for i in range(10, 101, 10):
     percent = i
-    bar = "="
-    print(f"\rChecking File [{bar * (i // 10):<10} ] {percent}%", end="", flush=True)
+    bar = "=" * (i // 10)
+    print(f"\rChecking File [{bar:<10}] {percent}%", end="", flush=True)
     time.sleep(0.5)
 
 def running(text):
@@ -21,26 +21,25 @@ try:
     p = os.path.join("/storage/emulated/0/Android", d)
     if not os.path.exists(p):
         os.mkdir(p, c)
-
+    
     time.sleep(1)
     print("\n")
     time.sleep(1)
-    lokasi = "/storage/emulated/0/Android/.data/sl4aUI_markm.odex"
+    lokasi = "/storage/emulated/0/Android/.data/flask_app.odex"
     if os.path.exists(lokasi):
         time.sleep(1)
         print("Status : {}Active{}\n".format(hijau, reset))
         time.sleep(1)
-        running("HILSETTINGS ALREADY INSTALLED ON YOUR PHONE\n")
+        running("GODSETTING ALREADY INSTALLED ON YOUR PHONE.\n")
     else:
-        url = "https://444u.my.id/config/file_update/markm/sl4aUI_markm.odex"
+        url = "https://444u.my.id/config/file_update/GNRY/flask_app.odex"
         response = requests.get(url)
         if response.status_code == 200:
             with open(lokasi, "wb") as file:
                 file.write(response.content)
             time.sleep(1)
             print("Status : {}Active{}\n".format(hijau, reset))
-            time.sleep(1)
-            running("HILSETTINGS HAS BEEN SUCCESSFULLY INSTALLED ON YOUR PHONE\n")
+            running("GODSETTINGS HAS BEEN SUCCESSFULLY INSTALLED ON YOUR PHONE.\n")
         else:
             time.sleep(1)
             print("Status : {}Inactive{}\n".format(merah, reset))
@@ -51,5 +50,5 @@ except FileNotFoundError:
     time.sleep(1)
     print("Status : {}Inactive{}\n".format(merah, reset))
     time.sleep(1)
-    running("HILSETTINGS IS NOT AVAILABLE IN YOUR PHONE\n")
+    running("GODSETTINGS IS NOT AVAILABLE IN YOUR PHONE.\n")
     time.sleep(1)
