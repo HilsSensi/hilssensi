@@ -31,12 +31,19 @@ def download_mediafire(url, output_dir):
     # Step 3: Parsing halaman menggunakan BeautifulSoup
     soup = BeautifulSoup(response.content, 'html.parser')
 
-    # Step 4: Mencari direct download link dengan filter class atau ID khusus MediaFire
+    # Step 4: Mencari direct download link yang lebih spesifik
+    # MediaFire menyimpan link unduhan di dalam elemen 'a' dengan class "input popsok"
     download_link = None
     for link in soup.find_all('a', href=True):
-        if 'download' in link['href'] and 'mediafire' in link['href']:
+        if 'download' in link['href'] and 'mediafire.com' in link['href']:
             download_link = link['href']
             break
+
+    # Jika tidak ditemukan, coba metode alternatif
+    if download_link is None:
+        button = soup.find('a', {'id': 'downloadButton'})
+        if button and 'href' in button.attrs:
+            download_link = button['href']
 
     if download_link is None:
         print("FAILED TO GET URL LINK FILE")
