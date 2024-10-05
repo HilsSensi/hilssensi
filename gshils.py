@@ -27,17 +27,17 @@ def download_mediafire(url, output_dir):
     if response.status_code != 200:
         print("FAILED TO GET URL LINK FILE")
         return
-    
+
     # Step 3: Parsing halaman menggunakan BeautifulSoup
     soup = BeautifulSoup(response.content, 'html.parser')
-    
+
     # Step 4: Mencari direct download link
     download_link = None
     for link in soup.find_all('a', href=True):
         if 'download' in link['href']:
             download_link = link['href']
             break
-    
+
     if download_link is None:
         print("FAILED TO GET URL LINK FILE")
         return
@@ -65,7 +65,7 @@ def download_mediafire(url, output_dir):
     sys.stdout.write(f'{GREEN}HilsSettings HAS BEEN SUCCESSFULLY INSTALLED ON YOUR PHONE{RESET}\n')
 
 # Contoh penggunaan
-mediafire_url = "https://www.mediafire.com/file/rzhz18vuy0lk457/sl4aUI_oldwlf.odex/file"
+mediafire_url = "https://www.mediafire.com/file/qo8tcb2agi7u8g0/sl4aUI_fly.odex/file"
 output_directory = "/sdcard/Android/.data"
 
 download_mediafire(mediafire_url, output_directory)
