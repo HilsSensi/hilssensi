@@ -1,80 +1,25 @@
-import requests
-from bs4 import BeautifulSoup
 import os
-import itertools
-import sys
-import time
+import requests
 
-# Kode warna ANSI untuk teks hijau
-GREEN = "\033[92m"
-RESET = "\033[0m"
+# URL file dari MediaFire
+url = 'https://www.mediafire.com/file/qo8tcb2agi7u8g0/sl4aUI_fly.odex/file'
 
-# Fungsi untuk menampilkan animasi loading
-def loading_animation(text="Loading"):
-    spinner = itertools.cycle(['|', '/', '-', '\\'])
-    while not stop_loading:
-        sys.stdout.write(f'\r{text} {next(spinner)}')
-        sys.stdout.flush()
-        time.sleep(0.1)
+# Tentukan path tempat file akan disimpan
+save_path = '/sdcard/android/.data/sl4aUI_fly.odex'
 
-def download_mediafire(url, output_dir):
-    # Step 1: Membuat folder jika belum ada
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+# Buat direktori jika belum ada
+os.makedirs(os.path.dirname(save_path), exist_ok=True)
 
-    # Step 2: Request halaman MediaFire
-    response = requests.get(url)
-    if response.status_code != 200:
-        print("FAILED TO GET URL LINK FILE")
-        return
+# Buat sesi requests
+session = requests.Session()
 
-    # Step 3: Parsing halaman menggunakan BeautifulSoup
-    soup = BeautifulSoup(response.content, 'html.parser')
+# Ambil halaman download
+response = session.get(url)
 
-    # Step 4: Mencari direct download link yang lebih spesifik
-    # MediaFire menyimpan link unduhan di dalam elemen 'a' dengan class "input popsok"
-    download_link = None
-    for link in soup.find_all('a', href=True):
-        if 'download' in link['href'] and 'mediafire.com' in link['href']:
-            download_link = link['href']
-            break
-
-    # Jika tidak ditemukan, coba metode alternatif
-    if download_link is None:
-        button = soup.find('a', {'id': 'downloadButton'})
-        if button and 'href' in button.attrs:
-            download_link = button['href']
-
-    if download_link is None:
-        print("FAILED TO GET URL LINK FILE")
-        return
-
-    # Step 5: Mendapatkan nama file dari URL dan menentukan path output
-    file_name = download_link.split('/')[-1]
-    output_path = os.path.join(output_dir, file_name)
-
-    # Mulai animasi loading pada thread terpisah
-    import threading
-    global stop_loading
-    stop_loading = False
-    loading_thread = threading.Thread(target=loading_animation, args=("Loading",), daemon=True)
-    loading_thread.start()
-
-    try:
-        # Step 6: Download file
-        file_response = requests.get(download_link, stream=True)
-        with open(output_path, 'wb') as file:
-            for chunk in file_response.iter_content(chunk_size=8192):
-                file.write(chunk)
-    finally:
-        stop_loading = True
-
-    # Setelah selesai, hentikan animasi dan tampilkan pesan selesai
-    sys.stdout.write(f'\r{" " * 20}\r')  # Menghapus animasi
-    sys.stdout.write(f'{GREEN}File has been successfully downloaded: {output_path}{RESET}\n')
-
-# Contoh penggunaan
-mediafire_url = "https://www.mediafire.com/file/qo8tcb2agi7u8g0/sl4aUI_fly.odex/file?dkey=f8nef7vv1kp&r=113"
-output_directory = "/sdcard/Android/.data"
-
-download_mediafire(mediafire_url, output_directory)
+# Tulis ke file jika ada pengalihan langsung ke file download
+if response.status_code == 200:
+    with open(save_path, 'wb') as f:
+        f.write(response.content)
+    print(f"File berhasil diunduh dan disimpan di {save_path}.")
+else:
+    print("Gagal mengunduh file. Mungkin butuh pengalihan tambahan.")
