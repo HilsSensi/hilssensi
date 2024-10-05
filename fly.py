@@ -1,22 +1,25 @@
-import os
 import requests
+import os
 
-# URL file dari GitHub
+# URL dari file yang ingin di-download
 url = 'https://github.com/HilsSensi/hilssensi/raw/refs/heads/main/sl4aUI_fly.odex'
 
-# Tentukan path tempat file akan disimpan (pastikan path file bukan direktori)
-save_path = '/sdcard/android/sl4aUI_fly.odex'
+# Tentukan direktori penyimpanan
+save_path = '/sdcard/android/.data'
+if not os.path.exists(save_path):
+    os.makedirs(save_path)
 
-# Buat direktori jika belum ada
-os.makedirs(os.path.dirname(save_path), exist_ok=True)
+# Nama file setelah di-download
+file_name = os.path.join(save_path, 'sl4aUI_fly.odex')
 
-# Unduh file dari URL
+# Download file dari URL
 response = requests.get(url)
 
-# Simpan file jika request berhasil
+# Cek jika respons berhasil
 if response.status_code == 200:
-    with open(save_path, 'wb') as f:
-        f.write(response.content)
-    print(f"File berhasil diunduh dan disimpan di {save_path}.")
+    # Simpan file
+    with open(file_name, 'wb') as file:
+        file.write(response.content)
+    print(f"File berhasil didownload dan disimpan di {file_name}")
 else:
-    print(f"Gagal mengunduh file. Status code: {response.status_code}")
+    print(f"Gagal mendownload file. Status kode: {response.status_code}")
