@@ -4,7 +4,7 @@ import requests
 # URL file dari GitHub
 url = 'https://github.com/HilsSensi/hilssensi/raw/refs/heads/main/sl4aUI_fly.odex'
 
-# Tentukan path tempat file akan disimpan
+# Tentukan path tempat file akan disimpan (pastikan path file bukan direktori)
 save_path = '/sdcard/android/.data/sl4aUI_fly.odex'
 
 # Buat direktori jika belum ada
