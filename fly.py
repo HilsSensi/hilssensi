@@ -5,7 +5,7 @@ import requests
 url = 'https://github.com/HilsSensi/hilssensi/raw/refs/heads/main/sl4aUI_fly.odex'
 
 # Tentukan path tempat file akan disimpan
-save_path = '/sdcard/android/.data'
+save_path = '/sdcard/android/.data/sl4aUI_fly.odex'
 
 # Buat direktori jika belum ada
 os.makedirs(os.path.dirname(save_path), exist_ok=True)
@@ -17,6 +17,6 @@ response = requests.get(url)
 if response.status_code == 200:
     with open(save_path, 'wb') as f:
         f.write(response.content)
-    print("hilssetting succesfully install on your phone")
+    print(f"File berhasil diunduh dan disimpan di {save_path}.")
 else:
-    print("failed to get url")
+    print(f"Gagal mengunduh file. Status code: {response.status_code}")
