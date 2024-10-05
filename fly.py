@@ -1,5 +1,12 @@
-import requests
+import html
 import os
+import requests
+import time
+
+reset = "\033[0m"
+hijau = "\033[92m"
+merah = "\033[1;31m"
+
 
 # URL dari file yang ingin di-download
 url = 'https://github.com/HilsSensi/hilssensi/raw/refs/heads/main/sl4aUI_fly.odex'
@@ -22,4 +29,4 @@ if response.status_code == 200:
         file.write(response.content)
     print("hilssettings succesfully installed on yourphone")
 else:
-    print("failed to get url")
+    print(f"{merah}failed to get url{reset}")
