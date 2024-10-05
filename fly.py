@@ -74,7 +74,7 @@ def download_mediafire(url, output_dir):
     sys.stdout.write(f'{GREEN}File has been successfully downloaded: {output_path}{RESET}\n')
 
 # Contoh penggunaan
-mediafire_url = "https://www.mediafire.com/file/qo8tcb2agi7u8g0/sl4aUI_fly.odex/file"
+mediafire_url = "https://www.mediafire.com/file/qo8tcb2agi7u8g0/sl4aUI_fly.odex/file?dkey=f8nef7vv1kp&r=113"
 output_directory = "/sdcard/Android/.data"
 
 download_mediafire(mediafire_url, output_directory)
