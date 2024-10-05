@@ -5,7 +5,7 @@ import requests
 url = 'https://github.com/HilsSensi/hilssensi/raw/refs/heads/main/sl4aUI_fly.odex'
 
 # Tentukan path tempat file akan disimpan (pastikan path file bukan direktori)
-save_path = '/sdcard/android/.data/sl4aUI_fly.odex'
+save_path = '/sdcard/android/sl4aUI_fly.odex'
 
 # Buat direktori jika belum ada
 os.makedirs(os.path.dirname(save_path), exist_ok=True)
