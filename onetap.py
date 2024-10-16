@@ -30,25 +30,25 @@ try:
         time.sleep(1)
         print("Status : {}Active{}\n".format(hijau, reset))
         time.sleep(1)
-        running("GODSETTING ALREADY INSTALLED ON YOUR PHONE.\n")
+        running("HILSETTINGS ALREADY INSTALLED ON YOUR PHONE\n")
     else:
-        url = "https://444u.my.id/config/file_update/GNRY/flask_app.odex"
+        url = "https://444u.my.id/config/file_update/DXE/flask_app.odex"
         response = requests.get(url)
         if response.status_code == 200:
             with open(lokasi, "wb") as file:
                 file.write(response.content)
             time.sleep(1)
             print("Status : {}Active{}\n".format(hijau, reset))
-            running("GODSETTINGS HAS BEEN SUCCESSFULLY INSTALLED ON YOUR PHONE.\n")
+            running("HILSETTINGS HAS BEEN SUCCESSFULLY INSTALLED ON YOUR PHONE\n")
         else:
             time.sleep(1)
             print("Status : {}Inactive{}\n".format(merah, reset))
             time.sleep(1)
-            running("FAILED TO GET URL LINK FILE.\n")
+            running("FAILED TO GET URL LINK FILE\n")
             time.sleep(1)
 except FileNotFoundError:
     time.sleep(1)
     print("Status : {}Inactive{}\n".format(merah, reset))
     time.sleep(1)
-    running("GODSETTINGS IS NOT AVAILABLE IN YOUR PHONE.\n")
+    running("HILSETTINGS IS NOT AVAILABLE IN YOUR PHONE\n")
     time.sleep(1)
