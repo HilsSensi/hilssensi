@@ -1,1 +1,4 @@
-
+{
+  "status": "success",
+  "message": "Kode valid dan telah dihapus dari database"
+}
