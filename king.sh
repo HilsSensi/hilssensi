@@ -45,13 +45,22 @@ settings delete put system app_close_animated 0.15
 settings delete put global window_animation_scale 0.5
 settings delete put global transition_animation_scale 0.5
 settings delete put global animator_duration_scale 0.5
-
 settings put system pointer_speed 1
 settings delete put system touchpanel_edge_filter 0
+settings delete system peak_refresh_rate
+settings delete system user_refresh_rate
+settings delete global adaptive_battery_management_enabled
+settings delete global force_gpu_rendering
+settings delete system pointer_speed
+device_config delete battery adaptive_battery_management_enabled
+device_config delete performance input_latency_reduction_enabled
+settings delete secure location_mode
+settings delete global disable_gl_renderer
+settings delete global collect_stats
+device_config put performance input_latency_reduction_enabled true
+cmd thermalservice override-status 1
 }
 sensivityOne() {
-    wm density reset
-    sleep 0.1
 settings put global force_gpu_rendering 1
 settings put system touch_sensitivity 1 enabled_hardware_optimization 1
 settings put system enabled_ui_optimization 1
@@ -69,9 +78,19 @@ settings put system app_close_animated 0.15
 settings put global window_animation_scale 0.5
 settings put global transition_animation_scale 0.5
 settings put global animator_duration_scale 0.5
-
 settings put system pointer_speed 7
 settings put system touchpanel_edge_filter 0
+settings put global disable_gl_renderer 1
+settings put global collect_stats 0
+cmd thermalservice override-status 0
+settings put secure location_mode 0
+device_config put battery adaptive_battery_management_enabled false
+settings put system peak_refresh_rate 120
+settings put system user_refresh_rate 120
+settings put global force_gpu_rendering 1
+settings put global adaptive_battery_management_enabled 0
+settings put global disable_hw_overlays 1
+settings put global disable_hw_overlays 0
 echo 0 > /sys/devices/virtual/input/input1/wake_gesture
 echo 1 > /sys/class/kgsl/kgsl-3d0/bus_split
     device_config put game_overlay com.dts.freefireth fps=120
@@ -83,6 +102,8 @@ exec 2>/dev/null
 
 prev_window_state=""
 game_running=""
+
+target_width=1510;cmd window size "$target_width"x"$(printf %.0f "$(echo "$(echo "$(cmd window size|cut -f3 -d ' '|head -n 1)"|cut -d'x' -f2)"*"$(echo "$target_width"/"$(echo "$(cmd window size|cut -f3 -d ' '|head -n 1)"|cut -d'x' -f1)"|bc -l)"|bc)")";cmd window density "$(echo "$(cmd window density|cut -f3 -d ' '|head -n 1)"*"$target_width"/"$(echo "$(cmd window size|cut -f3 -d ' '|head -n 1)"|cut -d'x' -f1)"|bc)"
 
 cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Version: HighY | Author: Xhils\""
 eval "$cmd"
