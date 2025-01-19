@@ -39,8 +39,6 @@ echo
     pkill -f fozx64
     wm size reset 
     wm density reset
-    settings put secure multi_press_timeout 400
-    settings put secure long_press_timeout 400 
     settings delete put global force_gpu_rendering 1
 settings delete put system touch_sensitivity 1 enabled_hardware_optimization 1
 settings delete put system enabled_ui_optimization 1
@@ -58,9 +56,20 @@ settings delete put system app_close_animated 0.15
 settings delete put global window_animation_scale 0.5
 settings delete put global transition_animation_scale 0.5
 settings delete put global animator_duration_scale 0.5
-
 settings put system pointer_speed 1
 settings delete put system touchpanel_edge_filter 0
+settings delete system peak_refresh_rate
+settings delete system user_refresh_rate
+settings delete global adaptive_battery_management_enabled
+settings delete global force_gpu_rendering
+settings delete system pointer_speed
+device_config delete battery adaptive_battery_management_enabled
+device_config delete performance input_latency_reduction_enabled
+settings delete secure location_mode
+settings delete global disable_gl_renderer
+settings delete global collect_stats
+device_config put performance input_latency_reduction_enabled true
+cmd thermalservice override-status 1
     rm $sizeath
     rm $pathking
     rm $pathfozx
