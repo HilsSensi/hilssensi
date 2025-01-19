@@ -26,8 +26,7 @@ done
 }
 RemoveListerOne() {
     device_config delete game_overlay
-    wm size reset
-    wm density reset
+cmd game downscale disable com.dts.freefireth;cmd game downscale disable com.dts.freefiremax
 settings delete put global force_gpu_rendering 1
 settings delete put system touch_sensitivity 1 enabled_hardware_optimization 1
 settings delete put system enabled_ui_optimization 1
@@ -61,6 +60,8 @@ device_config put performance input_latency_reduction_enabled true
 cmd thermalservice override-status 1
 }
 sensivityOne() {
+device_config put game_overlay com.dts.freefiremax mode=2,downscaleFactor=1.7:mode=3,downscaleFactor=0.8;device_config put game_overlay com.dts.freefireth mode=2,downscaleFactor=1.7:mode=3,downscaleFactor=0.8
+cmd game downscale 1.8 com.dts.freefireth;cmd game downscale 1.8 com.dts.freefiremax
 settings put global force_gpu_rendering 1
 settings put system touch_sensitivity 1 enabled_hardware_optimization 1
 settings put system enabled_ui_optimization 1
