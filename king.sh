@@ -23,6 +23,9 @@ t_priorities() {
         done
     fi
 done
+
+target_width=1620;cmd window size "$target_width"x"$(printf %.0f "$(echo "$(echo "$(cmd window size|cut -f3 -d ' '|head -n 1)"|cut -d'x' -f2)"*"$(echo "$target_width"/"$(echo "$(cmd window size|cut -f3 -d ' '|head -n 1)"|cut -d'x' -f1)"|bc -l)"|bc)")";cmd window density "$(echo "$(cmd window density|cut -f3 -d ' '|head -n 1)"*"$target_width"/"$(echo "$(cmd window size|cut -f3 -d ' '|head -n 1)"|cut -d'x' -f1)"|bc)"
+
 }
 RemoveListerOne() {
     device_config delete game_overlay
@@ -96,6 +99,7 @@ echo 0 > /sys/devices/virtual/input/input1/wake_gesture
 echo 1 > /sys/class/kgsl/kgsl-3d0/bus_split
     device_config put game_overlay com.dts.freefireth fps=120
     device_config put game_overlay com.dts.freefiremax fps=120
+wm density 420
 }
 
 exec 1>/dev/null
