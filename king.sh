@@ -128,10 +128,6 @@ while true; do
 				sleep 0.7
 			done
 
-target_width=1620;cmd window size "$target_width"x"$(printf %.0f "$(echo "$(echo "$(cmd window size|cut -f3 -d ' '|head -n 1)"|cut -d'x' -f2)"*"$(echo "$target_width"/"$(echo "$(cmd window size|cut -f3 -d ' '|head -n 1)"|cut -d'x' -f1)"|bc -l)"|bc)")";cmd window density "$(echo "$(cmd window density|cut -f3 -d ' '|head -n 1)"*"$target_width"/"$(echo "$(cmd window size|cut -f3 -d ' '|head -n 1)"|cut -d'x' -f1)"|bc)"
-
-wm density 420
-
 			cmd="cmd notification post -S bigtext -t \"FreeFireScript\" \"Tag\" \"Successfully Inject mode\""
 			eval "$cmd"
 
